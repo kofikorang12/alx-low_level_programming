@@ -20,7 +20,7 @@ int main(void)
 			if (e != i && e < i)
 			{
 				putchar(e);
-				putcahr(i);
+				putchar(i);
 				if (i == 57 && e == 56)
 				{
 					break;
