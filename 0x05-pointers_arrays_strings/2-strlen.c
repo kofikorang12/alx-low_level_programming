@@ -5,6 +5,7 @@
  * @s: input string.
  * Return: lenght of a string.
  */
+
 int _strlen(char *s)
 {
 	int count = 0;
