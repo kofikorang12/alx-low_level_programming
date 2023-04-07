@@ -15,7 +15,7 @@ int main (int argc, char *argv[])
 	{
 		for (y = 0; argv[x][y] != '\0'; y++)
 		{
-			if (!isdigit(arg[x][y]))
+			if (!isdigit(argv[x][y]))
 			{
 				printf("Error\n");
 				return (1);
