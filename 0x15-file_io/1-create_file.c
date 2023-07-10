@@ -1,6 +1,25 @@
 #include "main.h"
 
 /**
+ * _strlen - find length of string
+ * @str: string to be evaluated
+ *
+ * Return: length of string
+ */
+int _strlen(char *str)
+{
+	int i = 0;
+
+	while (*str != '\0')
+	{
+		i++;
+		str++;
+	}
+
+	return (i);
+}
+
+/**
  * create_file - creates a file
  * @filename: name of file to be created
  * @text_content: content to be written into file
