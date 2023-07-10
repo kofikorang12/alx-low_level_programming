@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #define BUFSIZE 32
 
 /**
