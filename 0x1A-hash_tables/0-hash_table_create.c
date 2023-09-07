@@ -5,6 +5,7 @@
  * @table: table to be set
  * @size: size of array
  */
+
 void zero_hash_table(hash_table_t *table, unsigned long int size)
 {
 	hash_node_t **ptr = table->array;
@@ -23,6 +24,7 @@ void zero_hash_table(hash_table_t *table, unsigned long int size)
  *
  * Return: the new table, or NULL if error occurred
  */
+
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *ret = malloc(sizeof(hash_table_t));
