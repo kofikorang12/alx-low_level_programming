@@ -7,6 +7,7 @@
  * hash_table_print - prints the hash table in Python dict format
  * @ht: hash table to be printed
  */
+
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t **array_ptr;
