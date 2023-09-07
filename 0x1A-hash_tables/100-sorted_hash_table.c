@@ -8,6 +8,7 @@
  * @table: table to be set
  * @size: size of array
  */
+
 void zero_shash_table(shash_table_t *table, unsigned long int size)
 {
 	shash_node_t **ptr = table->array;
@@ -26,6 +27,7 @@ void zero_shash_table(shash_table_t *table, unsigned long int size)
  *
  * Return: the new table, or NULL if error occurred
  */
+
 shash_table_t *shash_table_create(unsigned long int size)
 {
 	shash_table_t *ret = malloc(sizeof(shash_table_t));
@@ -59,6 +61,7 @@ shash_table_t *shash_table_create(unsigned long int size)
  * @ht: the hash table
  * @unset_node: node to be inserted
  */
+
 void set_sorted_list(shash_table_t *ht, shash_node_t *unset_node)
 {
 	shash_node_t *node_ptr = ht->shead;
@@ -111,6 +114,7 @@ void set_sorted_list(shash_table_t *ht, shash_node_t *unset_node)
  *
  * Return: 1 if Success, 0 if failure
  */
+
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
@@ -161,6 +165,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  *
  * Return: the value if success, NULL if failure
  */
+
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	unsigned long int index;
@@ -192,6 +197,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
  * in alphabetical order
  * @ht: hash table to be printed
  */
+
 void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *node_ptr;
@@ -235,6 +241,7 @@ void shash_table_print(const shash_table_t *ht)
  * in reverse alphabetical order
  * @ht: hash table to be printed
  */
+
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *node_ptr;
@@ -277,6 +284,7 @@ void shash_table_print_rev(const shash_table_t *ht)
  * shash_table_delete - frees a hash table
  * @ht: table to be freed
  */
+
 void shash_table_delete(shash_table_t *ht)
 {
 	shash_node_t *node_ptr = ht->shead;
