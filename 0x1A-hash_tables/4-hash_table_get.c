@@ -7,6 +7,7 @@
  *
  * Return: the value if success, NULL if failure
  */
+
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int index;
