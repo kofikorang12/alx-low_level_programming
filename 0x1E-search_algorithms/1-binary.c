@@ -1,71 +1,61 @@
-#include <stdio.h>
+#include "search_algos.h"
 
 /**
- * print_array - prints an array
- * @array: array to print
- * @size: size of array
+ * recursive_search - searches for a value in an array of
+ * integers using the Binary search algorithm
+ *
+ *
+ * @array: input array
+ * @size: size of the array
+ * @value: value to search in
+ * Return: index of the number
  */
-void print_array(int *array, size_t size)
+int recursive_search(int *array, size_t size, int value)
 {
-	unsigned int i;
+	size_t half = size / 2;
+	size_t i;
 
-	for (i = 0; i < size - 1; i++, array++)
-	{
-		printf("%i, ", *array);
-	}
+	if (array == NULL || size == 0)
+		return (-1);
 
-	printf("%i\n", *array);
+	printf("Searching in array");
+
+	for (i = 0; i < size; i++)
+		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
+
+	printf("\n");
+
+	if (half && size % 2 == 0)
+		half--;
+
+	if (value == array[half])
+		return ((int)half);
+
+	if (value < array[half])
+		return (recursive_search(array, half, value));
+
+	half++;
+
+	return (recursive_search(array + half, size - half, value) + half);
 }
 
 /**
- * binary_search - finds a value by checking value at middle of array
- * @array: array to be checked
- * @size: size of array
- * @value: value to be searched for
+ * binary_search - calls to binary_search to return
+ * the index of the number
  *
- * Return: index of value, or -1 if not found
+ * @array: input array
+ * @size: size of the array
+ * @value: value to search in
+ * Return: index of the number
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int mid;
-	int result;
+	int index;
 
-	if (array == NULL)
-	{
+	index = recursive_search(array, size, value);
+
+	if (index >= 0 && array[index] != value)
 		return (-1);
-	}
-	if (size == 0)
-	{
-		return (-1);
-	}
 
-	printf("Searching in array: ");
-	print_array(array, size);
-
-	if (size == 1 && *array != value)
-	{
-		return (-1);
-	}
-
-	mid = (size - 1) / 2;
-
-	if (*(array + mid) == value)
-	{
-		return (mid);
-	}
-	if (*(array + mid) > value)
-	{
-		return (binary_search(array, mid, value));
-	}
-	if (*(array + mid) < value)
-	{
-		result = binary_search(array + mid + 1, size - 1 - mid, value);
-		if (result == -1)
-		{
-			return (-1);
-		}
-		return (result + mid + 1);
-	}
-
-	return (-1);
+	return (index);
 }
